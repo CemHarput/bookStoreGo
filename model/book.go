@@ -1,9 +1,13 @@
-package main
+package model
 
-import "github.com/shopspring/decimal"
+import (
+	"github.com/shopspring/decimal"
+	"gorm.io/gorm"
+)
 
 // Define the Book struct
 type Book struct {
+    gorm.Model
     CommonFields
     Title  string `json:"title"`
     Author string `json:"author"`
