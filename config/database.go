@@ -2,17 +2,17 @@ package config
 
 import (
 	"github.com/CemHarput/bookStoreGo/model"
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
 var Database *gorm.DB
-var DATABASE_URI string = "root:root@tcp(localhost:3306)/gorm?charset=utf8mb4&parseTime=True&loc=Local"
+const DATABASE_URI = `host=localhost port=5432 user=postgres password=cem123. dbname=bookStoreGo sslmode=disable`
 
 func Connect() error {
     var err error
 
-    Database, err = gorm.Open(mysql.Open(DATABASE_URI), &gorm.Config{
+    Database, err = gorm.Open(postgres.Open(DATABASE_URI), &gorm.Config{
         SkipDefaultTransaction: true,
         PrepareStmt:            true,
     })

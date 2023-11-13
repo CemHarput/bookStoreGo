@@ -12,5 +12,5 @@ type PurchaseOrder struct {
 	Price  decimal.Decimal `json:"totalPrice"`
 	StockQuantity int `json:"stockQuantity"`
 	OrderDate time.Time `json:"orderDate"`
-	Books       []Book `json:"books"`
+	Books         []*Book         `gorm:"many2many:purchase_order_books;"`
 }

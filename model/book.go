@@ -13,4 +13,5 @@ type Book struct {
     Author string `json:"author"`
 	Price  decimal.Decimal `json:"price"`
 	StockQuantity int `json:"stockQuantity"`
+	PurchaseOrders []*PurchaseOrder `gorm:"many2many:purchase_order_books;"`
 }
