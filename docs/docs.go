@@ -19,7 +19,7 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
     Version:          "1.0.0",
     Host:             "localhost", // Change this to your actual host
-    BasePath:         "",         // Adjust the base path accordingly
+    BasePath:         "/api/v1",         // Adjust the base path accordingly
     Schemes:          []string{"http", "https"},
     Title:            "BookStore Application",
     Description:      "A BookStore Application in GoLang",
