@@ -3,7 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/CemHarput/bookStoreGo/bookStoreGo/config"
+	"github.com/CemHarput/bookStoreGo/config"
+	"github.com/CemHarput/bookStoreGo/handlers"
 	"github.com/gofiber/fiber/v2"
 )
 func main() {
@@ -13,11 +14,11 @@ func main() {
 
 	api := app.Group("/api/v1")
 
-    api.Get("/books", handlers.getBooks)
-    api.Get("/books/:id", handlers.getBook)
-    api.Post("/books", handlers.addBook)
-    api.Put("/books/:id", handlers.updateDog)
-    api.Delete("/books/:id", handlers.removeDog)
+    api.Get("/books", handlers.GetBooks)
+    api.Get("/books/:id", handlers.GetBook)
+    api.Post("/books", handlers.AddBook)
+    api.Put("/books/:id", handlers.UpdateBook)
+    api.Delete("/books/:id", handlers.RemoveBook)
 	
 	log.Fatal(app.Listen(":3000"))
  }

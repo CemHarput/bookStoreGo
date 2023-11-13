@@ -6,14 +6,14 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
-func getBooks(c *fiber.Ctx) error {
+func GetBooks(c *fiber.Ctx) error {
     var books []model.Book
 
     config.Database.Find(&books)
     return c.Status(200).JSON(books)
 }
 
-func getBook(c *fiber.Ctx) error {
+func GetBook(c *fiber.Ctx) error {
     id := c.Params("id")
     var book model.Book
 
@@ -25,7 +25,7 @@ func getBook(c *fiber.Ctx) error {
 
     return c.Status(200).JSON(&book)
 }
-func addBook(c *fiber.Ctx) error {
+func AddBook(c *fiber.Ctx) error {
     book := new(model.Book)
 
     if err := c.BodyParser(book); err != nil {
@@ -36,7 +36,7 @@ func addBook(c *fiber.Ctx) error {
     return c.Status(201).JSON(book)
 }
 
-func updateDog(c *fiber.Ctx) error {
+func UpdateBook(c *fiber.Ctx) error {
     book := new(model.Book)
     id := c.Params("id")
 
@@ -48,7 +48,7 @@ func updateDog(c *fiber.Ctx) error {
     return c.Status(200).JSON(book)
 }
 
-func removeDog(c *fiber.Ctx) error {
+func RemoveBook(c *fiber.Ctx) error {
     id := c.Params("id")
     var book model.Book
 
