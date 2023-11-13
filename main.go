@@ -6,6 +6,7 @@ import (
 	"github.com/CemHarput/bookStoreGo/config"
 	"github.com/CemHarput/bookStoreGo/handlers"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/swagger"
 )
 func main() {
 	app := fiber.New()
@@ -20,6 +21,7 @@ func main() {
     api.Put("/books/:id", handlers.UpdateBook)
     api.Delete("/books/:id", handlers.RemoveBook)
 	
+	app.Get("/swagger/*", swagger.HandlerDefault)
 	log.Fatal(app.Listen(":3000"))
  }
 
