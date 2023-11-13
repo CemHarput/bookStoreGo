@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/CemHarput/bookStoreGo/config"
+	"github.com/CemHarput/bookStoreGo/bookStoreGo/config"
 	"github.com/gofiber/fiber/v2"
 )
 func main() {
@@ -21,3 +21,5 @@ func main() {
 	
 	log.Fatal(app.Listen(":3000"))
  }
+
+ //https://github.com/CemHarput/bookStoreGo/tree/bookStoreGo/handlers
