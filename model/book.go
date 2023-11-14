@@ -5,7 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// Define the Book struct
+
 type Book struct {
     gorm.Model
     CommonFields
