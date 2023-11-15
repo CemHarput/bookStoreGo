@@ -13,4 +13,10 @@ type PurchaseOrder struct {
 	StockQuantity int `json:"stockQuantity"`
 	OrderDate time.Time `json:"orderDate"`
 	Books         []*Book         `gorm:"many2many:purchase_order_books;"`
+	PurchaseProcess *PurchaseProcess `json:"PurchaseProcess"`
+	 
 }
+func (purchaseOrder *PurchaseOrder) SetProcess(process *PurchaseProcess) {
+	purchaseOrder.PurchaseProcess.setState(process) 
+}
+

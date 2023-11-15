@@ -1,7 +1,7 @@
 package interfaces
 
-type purchaseState interface {
-	order()
-	refund()
-	checkThePurchaseProcess()
+type PurchaseState interface {
+	Order()
+	Refund()
+	CheckThePurchaseProcess()
 }
