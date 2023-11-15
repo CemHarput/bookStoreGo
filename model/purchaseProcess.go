@@ -18,7 +18,3 @@ func (purchaseState *PurchaseProcess) Order(){
 func (purchaseState *PurchaseProcess) Refund(){
 	purchaseState.defaultState.Refund()
 }
-func (purchaseState *PurchaseProcess) CheckThePurchaseProcess(){
-	purchaseState.defaultState.CheckThePurchaseProcess()
-}
-
