@@ -8,7 +8,6 @@ import (
 )
 type PurchaseOrder struct {
 	gorm.Model
-    CommonFields
 	Price  decimal.Decimal `json:"totalPrice"`
 	StockQuantity int `json:"stockQuantity"`
 	OrderDate time.Time `json:"orderDate"`

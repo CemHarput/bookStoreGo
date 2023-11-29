@@ -8,7 +8,6 @@ import (
 
 type Book struct {
     gorm.Model
-    CommonFields
     Title  string `json:"title"`
     Author string `json:"author"`
 	Price  decimal.Decimal `json:"price"`
